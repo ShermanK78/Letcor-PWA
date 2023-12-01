@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { articlesData } from "../../src/app/components/data.js";
-import Header from "../src/app/components/Header.js";
+import Header from "../../src/app/components/Header.js";
 
 const image1 =
   "/static/property-management-advice.jpg"
