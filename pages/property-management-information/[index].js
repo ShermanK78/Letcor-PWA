@@ -6,11 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { articlesData } from "../../src/app/components/data.js";
-import Header from "C:/Users/Camilla/Desktop/MERN/Projects/Letcor/property-manager-next/src/app/components/Header.js";
-
-<link rel="manifest" href="C:/Users/Camilla/Desktop/MERN/Projects/Letcor/property-manager-next/public/manifest.json"/>
-
-
+import Header from "../src/app/components/Header.js";
 
 const image1 =
   "/static/property-management-advice.jpg"

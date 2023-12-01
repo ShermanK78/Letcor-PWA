@@ -5,7 +5,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Link from 'next/link';
 
-<link rel="manifest" href="C:/Users/Camilla/Desktop/MERN/Projects/Letcor/property-manager-next/public/manifest.json"/>
 
 
 const logo =
