@@ -58,20 +58,7 @@
 
      
     ],
-    "screenshots": [
-        {
-          "src": "/static/screenshot1.png",
-          "type": "image/png",
-          "sizes": "640x320",
-          "form_factor": "narrow"
-        },
-        {
-          "src": "/static/screenshot2.png",
-          "type": "image/jpg",
-          "sizes": "720x540",
-          "form_factor": "wide"
-        }
-      ],
+   
     "theme_color": "#FFFFFF",
     "background_color": "#FFFFFF",
     "start_url": "/",
