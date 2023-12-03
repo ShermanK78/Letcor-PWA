@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/icon.png"></link>
+          <link rel="apple-touch-icon" href="/icon.png" />
           <meta name="theme-color" content="#fff" />
           
           {/* Add the service worker registration script */}
@@ -19,6 +19,18 @@ class MyDocument extends Document {
                   }).catch(error => {
                     console.error('Service Worker registration failed:', error);
                   });
+
+                  // Check if the beforeinstallprompt event is supported
+                  if ('BeforeInstallPromptEvent' in window) {
+                    // Wait for the beforeinstallprompt event
+                    window.addEventListener('beforeinstallprompt', (event) => {
+                      // Prevent the default "Add to Home Screen" prompt
+                      event.preventDefault();
+
+                      // Show the "Add to Home Screen" prompt on page load
+                      event.prompt();
+                    });
+                  }
                 }
               `,
             }}
