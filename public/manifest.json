@@ -1,68 +1,32 @@
 {
-    "name": "Letcor PWA App",
-    "short_name": "Letcor App",
-    "icons": [
-     
-      {
-        "src": "/icons/android-36x36.png",
-        "sizes": "36x36",
-        "type": "image/png"
-      },
-      {
-        "src": "/icons/android-48x48.png",
-        "sizes": "48x48",
-        "type": "image/png"
-      },  {
-        "src": "/icons/android-72x72.png",
-        "sizes": "72x72",
-        "type": "image/png"
-      },  {
-        "src": "/icons/android-96x96.png",
-        "sizes": "96x96",
-        "type": "image/png"
-      },  {
-        "src": "/icons/android-144x144.png",
-        "sizes": "144x144",
-        "type": "image/png"
-      },  {
-        "src": "/icons/android-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-       {
-        "src": "/icons/android-chrome-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/icons/android-chrome-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      },
-      {
-        "src": "/icons/android-chrome-maskable-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "maskable"
-      }, {
-        "src": "/icons/android-chrome-maskable-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "/icons/apple-touch-icon.png",
-        "sizes": "180x180",
-        "type": "image/png"
-      }
-
-     
-    ],
-   
-    "theme_color": "#FFFFFF",
-    "background_color": "#FFFFFF",
-    "start_url": "/",
+    "theme_color": "#3579f6",
+    "background_color": "#ffffff",
     "display": "standalone",
-    "scope": "/"
-    
-  }
+    "scope": "/",
+    "start_url": "/",
+    "name": "Letcor-PWA",
+    "short_name": "Letcor-PWA",
+    "description": "A Letcor-PWA Demo",
+    "icons": [
+        {
+            "src": "/icons/logo192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/logo256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/logo384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/logo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
