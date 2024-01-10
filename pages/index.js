@@ -77,6 +77,7 @@ const logo =
 
           <div>
             <Button style={{ backgroundColor: "green", borderColor: "green", marginTop: 20 }} href="./Listings" >VIEW LISTINGS</Button>{' '}
+          
           </div>
 
         </Container>
