@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <script
+       {/*<script
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
               }
             `,
           }}
-        />
+        />*/}
       </Head>
       <Component {...pageProps} />
     </>

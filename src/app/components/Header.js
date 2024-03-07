@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 
 const logo =
- "/static/letcor logo.png";
+ "/static/GTE Auto Logo.png";
 
 // Header component displays the navigation bar and user login status
 function Header() {
@@ -36,7 +36,7 @@ function Header() {
   };
 
   const navbarStyle = {
-    backgroundColor: navbarBackground ? 'darkblue' : 'transparent',
+    backgroundColor: navbarBackground ? 'red' : 'transparent',
     opacity: '0.60',
     color: "white",
     width: "100%",
@@ -47,7 +47,7 @@ function Header() {
 
   const linkStyle = {
     color: 'white',
-    backgroundColor: 'darkblue'
+    backgroundColor: 'red'
     
   };
 
@@ -63,6 +63,7 @@ function Header() {
           src={logo}
           width="200"
           height="100"
+          border-radius="1"
           className="d-inline-block align-center"
         />
       </Navbar.Brand>
@@ -71,7 +72,7 @@ function Header() {
                             id={`offcanvasNavbar-expand-${expand}`}
                             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
                             placement="end"
-                              style={{ backgroundColor: 'darkblue', color: 'white' }}
+                              style={{ backgroundColor: 'red', color: 'white' }}
 
                         >
                             <Offcanvas.Header closeButton>
@@ -88,15 +89,12 @@ function Header() {
                                     &nbsp;
                                     &nbsp;
                                     &nbsp;
-                                    <Link href="/Listings" style={linkStyle} className='btn'>LISTINGS</Link>
+                                    <Link href="/Listings" style={linkStyle} className='btn'>SHOWROOM</Link>
                                     &nbsp;
                                     &nbsp;
                                     &nbsp;
                                    <Link href="/ContactPage" style={linkStyle} className='btn'>CONTACT US</Link>
-                                   &nbsp;
-                                    &nbsp;
-                                    &nbsp;
-                                   <Link href="/Library" style={linkStyle} className='btn'>LIBRARY</Link>
+                                  
 
 
 

@@ -7,6 +7,14 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Header from "../src/app/components/Header.js";
+import 'react-toastify/dist/ReactToastify.min.css';
+import { generateToken } from "C:/Users/Camilla/Desktop/MERN/Projects/Vehicle Dealers PWA/src/firebaseNotification/firebase.js";
+import { getMessaging, onMessage } from 'firebase/messaging';
+import firebaseApp from 'C:/Users/Camilla/Desktop/MERN/Projects/Vehicle Dealers PWA/src/firebaseNotification/firebase.js';
+import useFcmToken from "../utils/hooks/useFcmToken.js";
+
+
+
 
 
 
@@ -17,7 +25,7 @@ const styles = {
 };
 
 const insideStyles1 = {
-  background: `linear-gradient(to bottom, #0000b1, #00004e)`,
+  background: `linear-gradient(to bottom, #cc0000, #9d2f2f)`,
   width: "100%",
   height: "100%",
   padding: 20,
@@ -32,28 +40,40 @@ const insideStyles1 = {
 
 
 const image1 =
-  "/static/student-accomodation-courtyard_b.jpg";
+  "/static/supercar showroom.jpg";
 const image2 =
-  "/static/letcor complexes.jpg";
+  "/static/merc interior.jpg";
 const image3 =
-  "/static/student-accomodation-university.png";
+  "/static/car dealer bg 3.jpg";
 const image4 =
-  "/static/student-accomodation-residence.jpg";
+  "/static/car finance options.jpg";
 const image5 =
-  "/static/happy family residents.jpg";
+  "/static/car with bow.jpg";
 const logo =
-  "/static/letcor logo.png";
+  "/static/GTE Auto Logo.png";
+
+    const Main = ({props}) => {
+
+      const { fcmToken, notificationPermissionStatus } = useFcmToken();
+
+        // Log token and permissions when they change
+  useEffect(() => {
+    console.log('FCM Token:', fcmToken);
+    console.log('Notification Permission Status:', notificationPermissionStatus);
+  }, [fcmToken, notificationPermissionStatus]);
+
+  // Use fcmToken and notificationPermissionStatus as needed
 
 
-
-  const Main = ({props}) => {
-
-    const canonicalUrl = `https://letcor.co.za`;
+    const canonicalUrl = `https://thecsrnexus.com`;
 
     
     useEffect(() => {
       document.title = 'Property Management Library';
     }, []);
+
+ 
+    
   
   return (
   <div style={styles}>
@@ -63,20 +83,18 @@ const logo =
         <link rel="canonical" href={canonicalUrl} />
       </Head>
     <Parallax bgImage={image1}
-      strength={200}>
+      strength={50}>
       <div className="col-md-6 align-self-center text-left" style={{ height: 600, marginLeft: "30px" }}>
 
         <Container style={{ paddingTop: "200px" }}>
 
 
-          <div className='flex-wrap' style={{ backgroundColor: "darkblue", borderColor: "darkblue", color: "white", alignContent: "space-between", padding: "30px", opacity: 0.75 }}>
-            <h1>PROPERTY MANAGEMENT SPECIALISTS</h1>
-            Letcor is a leading property management company based in Johannesburg, South Africa.
-            Our commitment revolves around ensuring the safety, security, and satisfaction of clients.
-            We specialize in Residential Property, such as Simplexes, Duplexes and Student Accomodation.</div>
+          <div className='flex-wrap' style={{ backgroundColor: "red", borderColor: "red", color: "white", alignContent: "space-between", padding: "30px", opacity: 0.75 }}>
+            <h1>VEHICLE SALES & SERVICE SPECIALISTS</h1>
+            GTE Automotive is a premier vehicle sales specialist located in Johannesburg, specializing in a diverse range of vehicles, including Sedans, SUVs, and Performance Cars. Trust us to find the perfect ride to meet your needs.</div>
 
           <div>
-            <Button style={{ backgroundColor: "green", borderColor: "green", marginTop: 20 }} href="./Listings" >VIEW LISTINGS</Button>{' '}
+            <Button style={{ backgroundColor: "darkblue", borderColor: "darkblue", marginTop: 20 }} href="./Listings" >VISIT ONLINE SHOWROOM</Button>{' '}
           
           </div>
 
@@ -85,21 +103,25 @@ const logo =
     </Parallax>
 
 
-    <Parallax bgImage={image2} strength={-100}>
-      <div style={{ height: '100%', width: '100%', zIndex: 1, display: 'grid' }}>
+    <Parallax bgImage={image2} strength={200}>
+      <div style={{ height: '75%', width: '100%', zIndex: 1, display: 'grid' }}>
+
         <div style={insideStyles1}>
 
           <Row className="flex-wrap">
             <Col xs={6} sm={6} md={6} className="flex-wrap">
-              <h2 style={{ color: "white" }}>RESIDENTIAL PROPERTY MANAGEMENT</h2>
+              <h2 style={{ color: "white" }}>ONLY THE BEST FOR OUR DISCERNING CLIENTS</h2>
               <p className="text-white">
-                Our proficient teams excel in the seamless transition of properties into our portfolio, effectively managing day-to-day property operations. This includes meticulous financial and expense control, strategic capital improvements, proactive maintenance, optimal leasing and tenant retention strategies, comprehensive reporting mechanisms, and robust security measures. 
+              You will discover unparalleled excellence in vehicle quality at our dealership. Trust us for a seamless and reliable process, from inspection to purchase, as we focus on providing you with the finest vehicles available in the market. 
               </p>
               <p className='text-white'>
-                Our optimal leasing and tenant retention strategies are designed to create stable, long-term tenancies that benefit both property owners and residents. We provide comprehensive reporting mechanisms that offer our clients transparent insights into their investments, empowering them to make informed decisions.
+              We specialize in offering top-tier, thoroughly inspected, and professionally upholstered vehicles with low mileage, minimal wear, and tear. Our commitment to quality extends to meticulous servicing, ensuring every vehicle meets the highest standards. 
               </p>
               <p className="text-white"> 
-              Our commitment to excellence ensures properties are not only managed but optimized for superior performance, guaranteeing long-term value for our clients.
+              Our commitment to excellence ensures our vehicles are not only managed but optimized for superior performance, guaranteeing long-term satisfaction for our clients.
+              </p>
+              <p className="text-white">
+              Your satisfaction is our priority.
               </p>
             </Col>
             <Col xs={6} sm={6} md={6}>
@@ -114,22 +136,22 @@ const logo =
 
 
 
-    <Parallax strength={500} xs={12} sm={6} md={4}>
+    <Parallax strength={200} xs={12} sm={6} md={4}>
       <Background className="custom-bg">
         <div
           style={{
             height: 2000,
             width: 2000,
-            backgroundColor: "white",
+            backgroundColor: "black",
           }}
         />
       </Background>
       <div className="text-center">
         <br />
 
-        <h3 style={{ color: "blue" }}>WHY LETCOR?</h3>
+        <h3 style={{ color: "blue" }}>WHY CHOOSE GTE AUTOMOTIVE?</h3>
         <br />
-        <Container style={{ color: "grey" }}>Letcor Property Management strives to create safe, secure and nurturing environments for professionals, students and families. We take pride in having being in existnce for more than 40 years, an integral part of the South African property market, and an innovator in ensuring satisfaction for all of our valued clients.</Container>
+        <Container style={{ color: "white" }}>At our dealership, we take pride in delivering a superior vehicle buying experience. With a commitment to excellence spanning over 40 years, we have become a cornerstone in the automotive market. Our dedication to providing top-quality, thoroughly inspected, and professionally upholstered vehicles sets us apart as innovators in customer satisfaction.</Container>
         <br />
         <br />
 
@@ -137,7 +159,7 @@ const logo =
     </Parallax>
 
     <Parallax
-      bgImage={image5}
+      bgImage={image3}
       strength={200}
       renderLayer={(percentage) => (
         <div id="parallelogram" >
@@ -145,7 +167,7 @@ const logo =
 
             style={{
               position: "absolute",
-              background: `linear-gradient(to bottom, #0000b1, #00004e)`,
+              background: `linear-gradient(to bottom, #cc0000, #9d2f2f)`,
               left: `${percentage * 25}%`,
               bottom: `${percentage * 15}%`,
               transform: `skewY(-5deg)`,
@@ -161,8 +183,8 @@ const logo =
             <div style={{ transform: `skewY(5deg)`, height: '80%', marginLeft: "10px", paddingRight: "10px", marginTop: "30px", marginBottom: '30px', paddingBottom: '10px', display: 'grid' }}>
               <br></br>
               <div >
-                <h2 style={{ color: "white" }}>WE VALUE YOUR SAFETY & SECURITY</h2>
-                <p style={{ color: "white" }}>We prioritize safety measures, employ cutting-edge security systems, and offer unrivaled services to create an environment where residents can truly feel at home. At Letcor, we truly value our clients and the need for comfort, security and service.</p>
+                <h2 style={{ color: "white" }}>WE VALUE YOUR PEACE OF MIND</h2>
+                <p style={{ color: "white" }}>Trust us to provide you with a buying experience that prioritizes your satisfaction and peace of mind. At our dealership, its not just about selling vehicles; its about delivering an experience you can trust.</p>
               </div>
 
 
@@ -179,22 +201,21 @@ const logo =
 
 
 
-    <Parallax bgImage={image3} strength={-100}>
+    <Parallax bgImage={image4} strength={200}>
       <div style={{ height: '100%', width: '100%', zIndex: 1, display: 'grid' }}>
         <div style={insideStyles1}>
 
           <Row className="flex-wrap">
             <Col xs={6} sm={6} md={6} className="flex-wrap">
-              <h2 style={{ color: "white" }}>STUDENT ACCOMODATION</h2>
+              <h2 style={{ color: "white" }}>ENHANCING THE CAR BUYING EXPERIENCE</h2>
               <p className="text-white">
-                We want every student to look back on their years in Letcor accommodation with a sense of satisfaction and fulfillment. To achieve this, we offer a range of amenities and services that enhance the overall student experience.
+              Our goal is to create an environment where every customer looks back on their time with a deep sense of satisfaction and fulfillment. To achieve this, we go beyond just offering quality vehicles. Our showroom is meticulously designed to cater to the diverse needs of our customers.
               </p>
               <p className="text-white">
-                To that end, we have meticulously designed our amenities and services to cater to the holistic needs of our residents. From well-appointed study lounges and high-speed internet access to foster a conducive learning environment, to vibrant common spaces and recreational facilities to foster social connections, Letcor ensures that students can thrive academically and personally.
+              From well-lit and spacious display areas showcasing our top-quality vehicles to a knowledgeable and friendly sales team, GTE ensures that customers can make informed decisions. Moreover, we provide comprehensive insurance options, extended warranties, and flexible service plans, giving you peace of mind beyond your purchase.
               </p>
               <p className="text-white">
-              At Letcor, we believe that a nurturing and comfortable living environment can significantly impact a students overall educational journey.
-              </p>
+              We understand that a positive and comfortable buying environment, coupled with added benefits like insurance coverage, warranties, and service plans, can significantly impact your overall journey. Visit GTE Automotive for an experience that goes beyond purchasing a car – its about finding the perfect vehicle and driving away with confidence, peace of mind, and satisfaction              </p>
             </Col>
             <Col xs={6} sm={6} md={6}>
               {/* Add any additional content or images here */}
@@ -212,16 +233,16 @@ const logo =
           style={{
             height: 2000,
             width: 2000,
-            backgroundColor: "white",
+            backgroundColor: "black",
           }}
         />
       </Background>
       <div className="text-center">
         <br />
 
-        <h3 style={{ color: "blue" }}>STUDENT ACCOMODATION</h3>
+        <h3 style={{ color: "blue" }}>REVIEWS</h3>
         <br />
-        <p style={{ color: "grey" }}>We ensure that our properties are more than just places to live; they are nurturing environments that empower students to make the most of their academic journey. Letcor is more than just accommodation; its a trusted partner in every students educational voyage.</p>
+        <p style={{ color: "white" }}>GTE Automotive exceeded expectations. Their professionalism, vast vehicle selection, and added perks like comprehensive insurance and extended warranties ensured a secure and enjoyable buying experience. Their after-sales service is equally commendable, making them my go-to for quality vehicles and top-notch service. - John Smith</p>
         <br />
         <br />
 
@@ -229,15 +250,15 @@ const logo =
     </Parallax>
 
     <Parallax
-      bgImage={image4}
-      strength={200}
+      bgImage={image5}
+      strength={50}
       renderLayer={(percentage) => (
         <div id="parallelogram" >
           <div
 
             style={{
               position: "absolute",
-              background: `linear-gradient(to bottom, #0000b1, #00004e)`,
+              background: `linear-gradient(to bottom, #cc0000, #9d2f2f)`,
               left: `${percentage * 25}%`,
               bottom: `${percentage * 15}%`,
               transform: `skewY(-5deg)`,
@@ -253,8 +274,8 @@ const logo =
             <div style={{ transform: `skewY(5deg)`, height: '80%', marginLeft: "10px", paddingRight: "10px", marginTop: "30px", marginBottom: '30px', paddingBottom: '10px', display: 'grid' }}>
               <br></br>
               <div >
-                <h2 style={{ color: "white" }}>FROM YOUR FIRST TO YOUR FINAL YEAR</h2>
-                <p style={{ color: "white" }}>From your first to your final year, we make your safety our top priority. Our state-of-the-art security systems and superior services create an environment where residents can truly call their home away from home, ensuring our residents satisfaction.</p>
+                <h2 style={{ color: "white" }}>FROM YOUR FIRST PURCHASE TO TRADE-INS</h2>
+                <p style={{ color: "white" }}>From your first purchase to your trade-in, GTE Automotive ensures a seamless and satisfying journey with top-quality vehicles, transparent processes, and unparalleled customer support.</p>
               </div>
 
 
@@ -271,7 +292,7 @@ const logo =
 
 
 
-    <Container fluid style={{ height: 'auto', color: "white", backgroundColor: "darkblue", paddingTop: 50, paddingLeft: 100, paddingRight: 100 }}>
+    <Container fluid style={{ height: 'auto', color: "white", backgroundColor: "red", paddingTop: 50, paddingLeft: 100, paddingRight: 100 }}>
       <Row className="justify-content-center text-center">
         <Col xs={12} sm={6} md={4}>
           <img
@@ -284,8 +305,8 @@ const logo =
         </Col>
         <Col xs={12} sm={6} md={4} className="d-inline-block align-center">
           <h5>CONTACT US</h5>
-          <p>100 Forest Rd, Johannesburg, 2000</p>
-          <p>+27 11 403 0701</p>
+          <p>100 Main Rd, Randburg, 2000</p>
+          <p>+27 79 702 2249</p>
         </Col>
         <Col xs={12} sm={6} md={4} className="d-inline-block align-center">
           <h5>LINKS</h5>

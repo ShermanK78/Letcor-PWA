@@ -10,7 +10,7 @@ import Header from "../src/app/components/Header.js";
 const image4 =
     "/static/property-management-advice.jpg"
 const logo =
-    "/static/letcor logo.png";
+    "/static/GTE Auto Logo.png";
 
 const ThankYou = ({ }) => {
 
@@ -37,7 +37,7 @@ const ThankYou = ({ }) => {
                         <div
                             style={{
                                 position: "absolute",
-                                background: `linear-gradient(to bottom, #0000b1, #00004e)`,
+                                background: `linear-gradient(to bottom,  #0000b1, #00004e)`,
                                 left: `${percentage * 25}%`,
                                 bottom: `${percentage * 15}%`,
                                 transform: `skewY(-5deg)`,
@@ -66,7 +66,7 @@ const ThankYou = ({ }) => {
                 <div style={{ height: 750 }}></div>
             </Parallax>
 
-            <Container fluid style={{ height: 'auto', color: "white", backgroundColor: "darkblue", paddingTop: 50, paddingLeft: 100, paddingRight: 100 }}>
+            <Container fluid style={{ height: 'auto', color: "white", backgroundColor: "red", paddingTop: 50, paddingLeft: 100, paddingRight: 100 }}>
                 <Row className="justify-content-center text-center">
                     <Col xs={12} sm={6} md={4}>
                         <img
@@ -79,8 +79,8 @@ const ThankYou = ({ }) => {
                     </Col>
                     <Col xs={12} sm={6} md={4}>
                         <h5>CONTACT US</h5>
-                        <p>100 Forest Rd, Johannesburg, 2000</p>
-                        <p>+27 11 403 0701</p>
+                        <p>100 Main Rd, Johannesburg, 2000</p>
+                        <p>+27 11 400 0000</p>
                     </Col>
                     <Col xs={12} sm={6} md={4}>
                         <h5>LINKS</h5>

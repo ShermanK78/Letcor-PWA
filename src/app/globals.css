@@ -127,3 +127,7 @@ Link {
 .a {
   color: aliceblue;
 }
+
+img {
+  border-radius: 10%;
+}

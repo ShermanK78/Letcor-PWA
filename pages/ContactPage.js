@@ -27,11 +27,11 @@ const insideStyles1 = {
 };
 
 const image1 = "/static/contact center.jpg";
-const logo = "/static/letcor logo.png";
+const logo = "/static/GTE Auto Logo.png";
 
 const Listings = (props) => {
 
-  const canonicalUrl = `https://letcor.co.za/ContactPage`;
+  const canonicalUrl = `https://thecsrnexus.com/ContactPage`;
 
   
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -58,7 +58,7 @@ const Listings = (props) => {
       <Parallax bgImage={image1} strength={200}>
         <div className="col-md-6 align-self-center text-left" style={{ height: '100%', marginLeft: "30px" }}>
           <Container style={{ paddingTop: "200px" }}>
-            <div className='flex-wrap' style={{ backgroundColor: "darkblue", borderColor: "darkblue", color: "white", alignContent: "space-between", padding: "30px", marginBottom: 20, opacity: 0.75 }}>
+            <div className='flex-wrap' style={{ backgroundColor: "red", borderColor: "red", color: "white", alignContent: "space-between", padding: "30px", marginBottom: 20, opacity: 0.75 }}>
               <h1>Contact Us</h1>
               {/* The Contact Form */}
               <Contact />
@@ -69,7 +69,7 @@ const Listings = (props) => {
         </div>
       </Parallax>
 
-      <Container fluid style={{ height: 'auto', color: "white", backgroundColor: "darkblue", paddingTop: 50, paddingLeft: 100, paddingRight: 100 }}>
+      <Container fluid style={{ height: 'auto', color: "white", backgroundColor: "red", paddingTop: 50, paddingLeft: 100, paddingRight: 100 }}>
         <Row className="justify-content-center text-center">
           <Col xs={12} sm={6} md={4}>
             <img
@@ -82,8 +82,8 @@ const Listings = (props) => {
           </Col>
           <Col xs={12} sm={6} md={4}>
             <h5>CONTACT US</h5>
-            <p>100 Forest Rd, Johannesburg, 2000</p>
-            <p>+27 11 403 0701</p>
+            <p>100 Main Rd, Johannesburg, 2000</p>
+            <p>+27 11 400 0000</p>
           </Col>
           <Col xs={12} sm={6} md={4}>
             <h5>LINKS</h5>

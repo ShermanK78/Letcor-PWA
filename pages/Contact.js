@@ -60,7 +60,7 @@ export default function Contact() {
         <textarea name="message"></textarea>
         </Row>
         <Row>
-        <Button type="submit" variant="outline-primary" style={{color: 'white', backgroundColor: 'green', borderColor: 'green', marginTop: '10px'}}>Submit Form</Button>
+        <Button type="submit" variant="outline-primary" style={{color: 'white', backgroundColor: 'darkblue', borderColor: 'darkblue', marginTop: '10px'}}>Submit Form</Button>
         </Row>
         </Container>
       </form>
